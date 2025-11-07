@@ -1,92 +1,98 @@
-import { DefaultTheme } from 'react-native-paper';
+import { MD3LightTheme as DefaultTheme, configureFonts } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
+
+const fontConfig = {
+  displayLarge: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+  },
+  displayMedium: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+  },
+  displaySmall: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+  },
+  headlineLarge: {
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+  },
+  headlineMedium: {
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+  },
+  headlineSmall: {
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+  },
+  titleLarge: {
+    fontFamily: 'Poppins',
+    fontWeight: '600',
+  },
+  titleMedium: {
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+  },
+  titleSmall: {
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+  },
+  labelLarge: {
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+  },
+  labelMedium: {
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+  },
+  labelSmall: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+  },
+  bodyLarge: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+  },
+  bodyMedium: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+  },
+  bodySmall: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+  },
+};
 
 const GalleryTheme = {
   colors: {
-    primary: '#014BF1',
-    fontPrimary: '#007AFF',
-    warning: '#FFC000',
-    success: '#70AD47',
-    info: '#5B9BD5',
-    font: '#000000',
-    inactive: '#9A9B9B',
-    fieldInactive: '#EBEAEA',
-    label: '#595C5F',
-    foreground: '#FFFFFF',
-    lightGrey: '#E8E8E8',
-    fontGrey: '#E6E5E5',
-    background: '#F5F7FA',
-    bodyBackground: '#F5F7FA',
-    successBg: '#70AD472E',
-    red: '#F53667',
-    fontLightGrey: '#7891A2',
-    statusLightGreen: '#E2EFDA',
-  },
-  fonts: {
-    fontFamily: 'Roboto',
-    titleLarge: {
-      fontSize: 20,
-      fontWeight: '600',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
-    titleMedium: {
-      fontSize: 16,
-      fontWeight: '600',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
-    titleSmall: {
-      fontSize: 14,
-      fontWeight: '400',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
-    bodyLarge: {
-      fontSize: 20,
-      fontWeight: '600',
-      fontStyle: 'normal',
-      color: '#FFFFFF',
-      fontFamily: 'Roboto',
-    },
-    bodyMedium: {
-      fontSize: 12,
-      fontWeight: '400',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
-    bodySmall: {
-      fontSize: 8,
-      fontWeight: '400',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
-    labelLarge: {
-      fontSize: 12,
-      fontWeight: '600',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
-    labelMedium: {
-      fontSize: 10,
-      fontWeight: '400',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
-    labelSmall: {
-      fontSize: 8,
-      fontWeight: '400',
-      fontStyle: 'normal',
-      color: '#000000',
-      fontFamily: 'Roboto',
-    },
+    primary: '#00bfa6',
+    secondary: '#FF7321',
+    background: '#FFFFFF',
+    surface: '#FAFBFB',
+    error: '#FF0000',
+    onPrimary: '#FFFFFF',
+    onSecondary: '#322942',
+    onBackground: '#2D3436',
+    onSurface: '#2D3436',
+    onError: '#FFFFFF',
+    outline: '#9A9B9B',
+    success: '#70AD47',                // successColor
+    inactive: '#9A9B9B',               // inActiveColor
+    fieldInactive: '#EBEAEA',          // fieldInActiveColor
+    label: '#595C5F',                  // labelColor
+    bodyBackground: '#F5F7FA',         // bodyBackgroundColor
+    lightOrange: '#FFFBDE',            // lightOrangeColor (card color)
+    primaryFont: '#2D3436',            // primaryFontColor (title color)
+    subtitle: '#636E72',               // subtitleColor
+    fontGrey: '#E6E5E5',               // fontGreyColor
+    font: '#000000',                   // fontColor (default font)
+    black: '#000000',                  // blackColor
+    white: '#FFFFFF',                  // whiteColor
+    red: '#FF0000',                    // redColor
+    grey: '#808080',                   // greyColor
+    lightGrey: '#E8E8E8',              // lightGreyColor 
+    lightPrimary: '#E0F9F5',   
   },
 };
 
@@ -94,15 +100,11 @@ const CustomTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: GalleryTheme.colors.primary,
-    accent: GalleryTheme.colors.fontPrimary,
-    background: GalleryTheme.colors.background,
-    surface: GalleryTheme.colors.foreground,
-    text: GalleryTheme.colors.font,
-    error: GalleryTheme.colors.red,
-    disabled: GalleryTheme.colors.inactive,
-    placeholder: GalleryTheme.colors.fieldInactive,
+    ...GalleryTheme.colors,
   },
+  fonts: configureFonts({ config: fontConfig }),
+  version: 3,
+  isV3: true,
 };
 
 const styles = StyleSheet.create({
@@ -111,17 +113,6 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderWidth: 2,
     borderColor: GalleryTheme.colors.primary,
-  },
-  input: {
-    borderColor: GalleryTheme.colors.font,
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
-    color: GalleryTheme.colors.font,
-  },
-  appBar: {
-    backgroundColor: GalleryTheme.colors.foreground,
-    color: GalleryTheme.colors.font,
   },
 });
 
