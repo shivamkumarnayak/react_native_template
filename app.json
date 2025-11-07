@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react_native_template",
-    "slug": "react_native_template",
+    "name": "",
+    "slug": "This is Health App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/app_icon.png",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#00bfa6"
     },
     "ios": {
       "supportsTablet": true,
